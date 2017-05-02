@@ -14,25 +14,25 @@ function Elemento(id, nome, posx, posy) {
     this.selected = false;
   }
 
-  this.renomear = function(v){
-    this.nome = v;
-  }
-
-
   this.desenha = function(){
     noStroke();
-    fill(20);
+    fill(170);
     rect(this.x+3, this.y+3, this.sx, this.sy);
-    fill(255);
+    fill('#FFFFF3');
     if(this.selected){
-      fill(215,255,255);
+      fill('#E0E3DA');
     }
-    stroke(0);
+    stroke('#566270');
     rect(this.x, this.y, this.sx, this.sy);
-    fill(0);
+    fill('#566270');
     noStroke();
     textAlign(CENTER, CENTER);
     text(this.nome, this.x+this.sx/2, this.y+this.sy/2);
+    if(this.selected){
+      stroke('#566270');
+      fill('#A593E0');
+      rect(this.x+this.sx-20, this.y+this.sy-20, 20, 20);
+    }
 
   }
 }
